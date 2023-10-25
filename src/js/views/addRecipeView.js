@@ -1,8 +1,9 @@
-import icons from 'url:../../img/icons.svg'; // Parcel 2
 import View from './View.js';
 
 class AddRecipeView extends View {
   _parentElement = document.querySelector('.upload');
+  _message = 'Recipe was successfully uploaded';
+
   _window = document.querySelector('.add-recipe-window'); // window is the modal
   _overlay = document.querySelector('.overlay'); // overlay is the background of the modal
   _btnOpen = document.querySelector('.nav__btn--add-recipe');
