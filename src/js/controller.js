@@ -89,8 +89,6 @@ const controlBookmarks = function () {
 };
 
 const controlAddRecipe = async function (newRecipe) {
-  console.log(newRecipe);
-
   try {
     // show loading spinner
     addRecipeView.renderASpinner();
@@ -103,6 +101,12 @@ const controlAddRecipe = async function (newRecipe) {
 
     // success message
     addRecipeView.renderMessage();
+
+    // Render bookmark view
+    bookmarksView.render(model.state.bookmarks);
+
+    // change ID in the URL
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
 
     // close the form window
     setTimeout(function () {
